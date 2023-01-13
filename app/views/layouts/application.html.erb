@@ -13,10 +13,14 @@
   </head>
 
   <body>
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+    <div class="container-pt5">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+      <div class="card">
+        <div class="card-body">
+        <%= yield %>
+        </div> 
+      </div>
     </div>
   </body>
 </html>

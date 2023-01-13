@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h2 class='card-title d-flex justify-content-between'>
+<span>Proyectos</span>
+<%= link_to 'Proyecto Nuevo', new_project_path, class: 'btn btn-primary'%>
+</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>User</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +21,9 @@
         <td><%= project.name %></td>
         <td><%= project.description %></td>
         <td><%= project.user_id %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', project %></td>
+        <td><%= link_to 'Editar', edit_project_path(project) %></td>
+        <td><%= link_to 'Eliminar', project, method: :delete, data: { confirm: '¿Estas seguro que deseas eliminar este proyecto?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
