@@ -20,6 +20,10 @@
   <%= @task.project %>
 </p>
 
+<p>
+  <b>Entrega:</b>
+  <%= @task.dead_line %>
+</p>
 
 <%= link_to 'Edit', edit_project_task_path(@task.project, @task) %> |
 <%= link_to 'Back', project_tasks_path(@task.project) %>

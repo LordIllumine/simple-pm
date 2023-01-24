@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   end
 
   # GET projects/1/tasks/1/edit
-  def edit
+  def edit    
   end
 
   # POST projects/1/tasks
@@ -27,6 +27,7 @@ class TasksController < ApplicationController
 
     if @task.save
       redirect_to(@task.project)
+      flash[:succes] = "Tarea agregada con éxito!"
     else
       render action: 'new'
     end
@@ -36,6 +37,7 @@ class TasksController < ApplicationController
   def update
     if @task.update_attributes(task_params)
       redirect_to(@task.project)
+      flash[:succes] = "Tarea actualizada!"
     else
       render action: 'edit'
     end
@@ -60,6 +62,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:name, :description, :status, :project_id)
+      params.require(:task).permit(:name, :description, :status, :dead_line, :project_id)
     end
 end

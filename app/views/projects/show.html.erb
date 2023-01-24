@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %> </p>
+<div class="card">
+  <div class="card-body">
+    <h2 class='card-title d-flex justify-content-between'>
+      <span><%= @project.name %></span>
+      
+    </h2>
+  </div>
+</div>
 
 <p>
   <strong>Name:</strong>
@@ -11,8 +18,12 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>User id:</strong>
   <%= @project.user_id %>
+<br>
+<br>
+  <strong>User name:</strong>
+  <%= @project.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %>
@@ -34,7 +45,7 @@
     <th>Description</th>
     <th>Status</th>
     <th>Project</th>
-    <th></th>
+    <th>Entrega</th>
     <th></th>
     <th></th>
   </tr>
@@ -45,7 +56,8 @@
       <td><%= task.name %></td>
       <td><%= task.description %></td>
       <td><%= task.status %></td>
-      <td><%= task.project %></td>
+      <td><%= task.project.name %></td>
+      <td><%= task.dead_line %></td>
       <td><%= link_to 'Show', [task.project, task] %></td>
       <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
       <td><%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
