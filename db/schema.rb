@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_24_030144) do
+ActiveRecord::Schema.define(version: 2023_01_25_234540) do
+
+  create_table "canton_addresses", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "provinceCode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "district_addresses", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "cantonCode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
