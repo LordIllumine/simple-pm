@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :provinces
   resources :projects do
     resources :tasks
   end
-  # /projects/:project_id/tasks
 
+  resources :cantons
+
+# /projects/:project_id/tasks
  # namespace :project do
  #   resources :tasks
  # end
